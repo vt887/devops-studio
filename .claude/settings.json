@@ -62,6 +62,6 @@
     "SESSION_STATE_FILE": "production/session-state/active.md",
     "SESSION_LOGS_DIR": "production/session-logs",
     "GATES_FILE": ".claude/gates/gate-definitions.md",
-    "OBSIDIAN_VAULT": "/Users/tymoshv/obsidian-vaults/devops-studio"
+    "OBSIDIAN_VAULT": "obsidian-vaults/devops-studio"
   }
 }
