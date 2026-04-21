@@ -1,0 +1,78 @@
+# DevOps Studio — .gitignore
+
+# Runtime session logs (contain potentially sensitive data)
+production/session-logs/*.md
+!production/session-logs/.gitkeep
+
+# Active session state (runtime, not versioned)
+# Note: production/session-state/active.md IS committed as a template
+# but populated state at runtime should not be committed
+# The initial template is committed intentionally.
+
+# Terraform runtime artifacts
+**/.terraform/
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfplan
+*.plan
+terraform.tfvars.local
+
+# Kubernetes generated secrets (never commit)
+**/secrets/*.yaml
+**/sealed-secrets-backup/
+
+# Security scan outputs (may contain sensitive findings)
+production/session-logs/sec-scan-*.md
+production/session-logs/sec-audit-*.md
+
+# Cost reports (may contain billing data)
+production/session-logs/cost-report-*.md
+
+# OS and editor artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Build artifacts
+dist/
+build/
+*.zip
+*.tar.gz
+
+# Node modules (if any tooling added)
+node_modules/
+
+# Python artifacts (if any tooling added)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Sensitive files that should never be committed
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+kubeconfig
+kubeconfig.yaml
+.kube/
+*.env
+.env.*
+!.env.example
+credentials
+credentials.json
+service-account.json

@@ -1,0 +1,67 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write",
+      "Edit",
+      "Bash",
+      "Task",
+      "AskUserQuestion",
+      "WebFetch"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/session-start.sh"
+      },
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/session-detect-context.sh"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/post-session-sync.sh"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/validate-before-apply.sh",
+        "matcher": "Bash"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/log-decision.sh",
+        "matcher": "Write|Edit"
+      },
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/post-gate-check.sh",
+        "matcher": "Task"
+      }
+    ],
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/pre-compact.sh"
+      }
+    ]
+  },
+  "env": {
+    "DEVOPS_STUDIO_VERSION": "1.1.0",
+    "REVIEW_MODE_FILE": "production/review-mode.txt",
+    "SESSION_STATE_FILE": "production/session-state/active.md",
+    "SESSION_LOGS_DIR": "production/session-logs",
+    "GATES_FILE": ".claude/gates/gate-definitions.md",
+    "OBSIDIAN_VAULT": "/Users/tymoshv/obsidian-vaults/devops-studio"
+  }
+}
