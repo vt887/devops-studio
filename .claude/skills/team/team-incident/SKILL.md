@@ -4,6 +4,10 @@ description: "Production incident response workflow. Immediate triage, investiga
 argument-hint: "[incident-description] [severity SEV1|SEV2|SEV3]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
+agent: sre-director
+context: |
+  !cat production/review-mode.txt 2>/dev/null || echo "full"
+  !ls production/session-logs/incident-*.md 2>/dev/null
 ---
 
 ## /team-incident

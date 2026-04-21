@@ -4,6 +4,11 @@ description: "Multi-agent workflow to migrate an application between cloud provi
 argument-hint: "[service-name] [source-cloud] [target-cloud] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
+agent: architect
+context: |
+  !cat production/review-mode.txt 2>/dev/null || echo "full"
+  !cat production/session-state/active.md 2>/dev/null
+  !ls docs/decisions/ 2>/dev/null
 ---
 
 ## /team-migration

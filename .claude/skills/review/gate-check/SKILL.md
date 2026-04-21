@@ -4,6 +4,9 @@ description: "Manually run a specific quality gate check. Use to validate readin
 argument-hint: "[GATE-ID: ARCH-DECISION|SEC-BASELINE|COST-ESTIMATE|ARCH-REVIEW|SRE-READY|SEC-SCAN|INCIDENT-RESOLVED]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Task, AskUserQuestion
+context: |
+  !cat production/review-mode.txt 2>/dev/null || echo "full"
+  !cat .claude/gates/gate-definitions.md 2>/dev/null
 ---
 
 ## /gate-check [GATE-ID]

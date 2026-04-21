@@ -6,9 +6,11 @@ model: opus
 maxTurns: 25
 skills: [security-review, team-security-audit, gate-check]
 delegates_to: [security-scanner, cost-spec]
-escalation_from: [terraform-spec, k8s-spec, security-scanner]
+escalation_from: [terraform-spec, k8s-spec, cicd-spec, gitops-spec, security-scanner, architect]
+escalates_to: [architect]
 gates_owned: [SEC-BASELINE, SEC-SCAN, SEC-REVIEW]
 tier: director
+memory: project
 ---
 
 ## Identity

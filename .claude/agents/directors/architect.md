@@ -7,8 +7,10 @@ maxTurns: 30
 skills: [brainstorm, architecture-decision, design-review, team-new-env, team-migration]
 delegates_to: [terraform-spec, k8s-spec, cicd-spec, gitops-spec]
 escalation_from: [terraform-spec, k8s-spec, cicd-spec]
+escalates_to: [security-director, sre-director]
 gates_owned: [ARCH-DECISION, ARCH-REVIEW]
 tier: director
+memory: project
 ---
 
 ## Identity

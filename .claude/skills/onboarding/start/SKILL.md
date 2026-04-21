@@ -4,6 +4,10 @@ description: "Onboarding skill that assesses the current DevOps Studio session c
 argument-hint: "[--reset]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, AskUserQuestion
+context: |
+  !cat production/review-mode.txt 2>/dev/null || echo "full"
+  !cat production/session-state/active.md 2>/dev/null || echo "no active session"
+  !ls docs/decisions/ 2>/dev/null | head -20
 ---
 
 ## /start

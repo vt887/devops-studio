@@ -81,3 +81,15 @@ After every significant decision:
 3. **Partial progress is acceptable** — always produce a partial report if blocked
 4. **Security by default** — escalate to security-director on any security concern
 5. **Document everything** — every architectural decision gets an ADR
+
+## Reference Documents
+
+Load these when relevant:
+
+- `docs/scenarios.md` — 5 real-world scenarios and when to use which skill
+- `docs/delegation-map.md` — agent delegation tree, escalation paths, gate ownership
+- `.claude/docs/coordination.md` — parallelization, escalation, handoff rules
+- `.claude/gates/gate-definitions.md` — gate checklists and verdict formats
+- `.claude/gates/verdict-format.md` — `[GATE-ID]: APPROVE|CONCERNS|REJECT` formatting
+- `.claude/rules/<domain>/rules.md` — domain rules (terraform, kubernetes, cicd, security, gitops)
+- `docs/workflow-guide.md` — user-facing quick-start

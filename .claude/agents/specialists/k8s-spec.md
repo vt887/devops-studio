@@ -8,6 +8,7 @@ skills: [gate-check]
 delegates_to: []
 escalates_to: [architect, security-director, sre-director]
 tier: specialist
+memory: project
 ---
 
 ## Identity

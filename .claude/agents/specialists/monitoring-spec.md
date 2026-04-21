@@ -6,8 +6,9 @@ model: sonnet
 maxTurns: 20
 skills: [gate-check]
 delegates_to: []
-escalates_to: [sre-director]
+escalates_to: [sre-director, cost-spec]
 tier: specialist
+memory: project
 ---
 
 ## Identity

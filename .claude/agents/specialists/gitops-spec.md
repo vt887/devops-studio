@@ -6,8 +6,9 @@ model: sonnet
 maxTurns: 20
 skills: [gate-check]
 delegates_to: []
-escalates_to: [architect, k8s-spec, cicd-spec]
+escalates_to: [architect, security-director, k8s-spec, cicd-spec]
 tier: specialist
+memory: project
 ---
 
 ## Identity

@@ -4,12 +4,11 @@ description: "Spawn when Terraform IaC needs to be written, reviewed, or modifie
 tools: Read, Glob, Grep, Write, Edit, Bash, AskUserQuestion
 model: sonnet
 maxTurns: 20
-disallowedTools: []
 skills: [gate-check]
 delegates_to: []
-escalation_from: []
 escalates_to: [architect, security-director]
 tier: specialist
+memory: project
 ---
 
 ## Identity

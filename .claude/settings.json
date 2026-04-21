@@ -24,6 +24,12 @@
         "command": "bash .claude/hooks/session-detect-context.sh"
       }
     ],
+    "SessionEnd": [
+      {
+        "type": "command",
+        "command": "bash .claude/hooks/post-session-sync.sh"
+      }
+    ],
     "PreToolUse": [
       {
         "type": "command",
@@ -51,10 +57,11 @@
     ]
   },
   "env": {
-    "DEVOPS_STUDIO_VERSION": "1.0.0",
+    "DEVOPS_STUDIO_VERSION": "1.1.0",
     "REVIEW_MODE_FILE": "production/review-mode.txt",
     "SESSION_STATE_FILE": "production/session-state/active.md",
     "SESSION_LOGS_DIR": "production/session-logs",
-    "GATES_FILE": ".claude/gates/gate-definitions.md"
+    "GATES_FILE": ".claude/gates/gate-definitions.md",
+    "OBSIDIAN_VAULT": ""
   }
 }

@@ -4,6 +4,11 @@ description: "Full security audit workflow for infrastructure. Spawns security-d
 argument-hint: "[scope: all|terraform|k8s|cicd|network] [--review full|lean|solo]"
 user-invocable: true
 allowed-tools: Read, Glob, Grep, Write, Edit, Task, AskUserQuestion
+agent: security-director
+context: |
+  !cat production/review-mode.txt 2>/dev/null || echo "full"
+  !ls docs/decisions/security-*.md 2>/dev/null
+  !ls production/session-logs/sec-*.md 2>/dev/null
 ---
 
 ## /team-security-audit

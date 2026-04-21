@@ -6,9 +6,11 @@ model: opus
 maxTurns: 25
 skills: [team-incident, postmortem, runbook, gate-check]
 delegates_to: [monitoring-spec]
-escalation_from: [monitoring-spec]
+escalation_from: [monitoring-spec, k8s-spec, architect]
+escalates_to: [architect, security-director]
 gates_owned: [SRE-READY, INCIDENT-RESOLVED]
 tier: director
+memory: project
 ---
 
 ## Identity
